@@ -13,7 +13,6 @@ directory = "Playlists"
 originalPlaylist = open(original,"r")
 processedPlaylist = open(processed,"w")
 
-
 for line in originalPlaylist:
     proc = str(line)
     proc = proc.replace("Z:\Torrents\\","/storage/external_sd/")
