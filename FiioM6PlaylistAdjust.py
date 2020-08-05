@@ -6,10 +6,10 @@ hostAddress = "192.168.1.115"
 hostPort = 2121
 username = "UL7RA"
 password = ""
-original = "Vapor.m3u8"
-processed = "VaporX.m3u8"
+original = "Trippy.m3u8"
 directory = "Playlists"
 
+processed = "Processed.m3u8"
 originalPlaylist = open(original,"r")
 processedPlaylist = open(processed,"w")
 
@@ -32,7 +32,7 @@ try:
     if directory:
         connection.cwd(directory)
         print("Changed directory to %s"%(directory))
-    connection.storbinary("STOR %s" %(processed),playlistBinary,1024)
+    connection.storbinary("STOR %s" %(original),playlistBinary,1024)
     connection.close()
     playlistBinary.close()
     print("Success!")
